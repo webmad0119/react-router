@@ -1,0 +1,10 @@
+{
+    "home": {
+        "sectionName" : "Home",
+        "path" :  "/"
+    },
+    "about": {
+        "sectionName": "About",
+        "path" : "/about/3/asc"
+    }
+}
