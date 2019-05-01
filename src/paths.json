@@ -5,6 +5,10 @@
     },
     "about": {
         "sectionName": "About",
-        "path" : "/about/3/asc"
+        "path" : "/about/3/year"
+    },
+    "aboutnoyear": {
+        "sectionName": "About No Year",
+        "path" : "/about/3"
     }
 }

@@ -2,37 +2,58 @@
 
 import React from 'react';
 
-const about = (props) => {
+class About extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      movies: [
+        {
+          name: 'Batman',
+          year: 1999,
+          id: 1
+        },
+        {
+          name: 'Superman',
+          year: 2006,
+          id: 2
+        },
+        {
+          name: 'Rocky Horror Picture Show',
+          year: 1978,
+          id: 3
+        }
+      ]
 
-  let movies = [
-    {
-      name: 'a',
-      id: 1
-    },
-    {
-      name: 'b',
-      id: 2
-    },
-    {
-      name: 'c',
-      id: 3
     }
-  ]
+  }
 
-  let selectedMovie = movies.filter((movie) => {
-    return movie.id === +props.match.params.id
-  })
-    
-  return (
-    <div>
-        <h3>About</h3>
+  render() {
+    let selectedMovie = this.state.movies.filter((movie) => {
+      return movie.id === +this.props.match.params.id
+    })
 
-        <p>Tu película seleccionada es '{selectedMovie[0].name}'</p>
-        
-        <p>Me has pasado un {props.match.params.id}</p>
-        <p>Me has pasado un order {props.match.params.order}</p>
-    </div>
-  )
+    const sectionHeader = <React.Fragment><h3>About</h3><p>Welcome to the about section</p></React.Fragment>
+
+    if (selectedMovie.length === 0) {
+      return (
+        <div>
+          {sectionHeader}
+
+          <h1>Not found</h1>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          {sectionHeader}
+
+          <p>Your chosen movie is '{selectedMovie[0].name}'</p>
+
+          {this.props.match.params.year && <React.Fragment>Movie was made the year {selectedMovie[0].year}</React.Fragment>}
+        </div>
+      )
+    }
+  }
 }
 
-export default about;
+export default About;

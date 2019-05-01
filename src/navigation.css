@@ -1,0 +1,20 @@
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    text-decoration: underline;
+    padding: 20px;
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    height: 30px;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav {
+    background: #ccc;
+    width: 100%;
+}
